@@ -1,0 +1,11 @@
+node_modules
+.tmp
+.idea
+Capture
+bower_components
+build
+id_rsa
+id_rsa.pub
+optional .json
+ANGULAR video portal(1.27.13).7z
+app/vendor/
