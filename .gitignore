@@ -7,3 +7,5 @@ build
 id_rsa
 id_rsa.pub
 public/vendor/
+front-end/node_modules
+front-end/app/vendor/

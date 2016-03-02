@@ -14,4 +14,4 @@ Setup Environment
 	> bower install
 
 6. run server
-	> gulp
+	> npm start

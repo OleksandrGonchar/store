@@ -1,0 +1,27 @@
+{
+  "name": "videoPortal",
+  "version": "0.0.1",
+  "description": "Example",
+  "authors": [
+    "Oleksandr Gonchar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0",
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "ui-router#~0.2.17",
+    "angular-modal-service": "~0.6.9"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.9",
+    "angular-resource": "~1.4.9"
+  }
+}
