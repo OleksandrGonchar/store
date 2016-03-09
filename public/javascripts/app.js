@@ -52,6 +52,6 @@
         $scope.logined = 10;
         $scope.logout = 20;
         $scope.user = 30;
-        console.log(5);
+        console.log(50);
     }
 })();
