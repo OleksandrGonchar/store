@@ -59,7 +59,13 @@ table {
 }
 
 /* custom part */
-
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
 body {
     background: #3c3c3c;
     color: #999;
@@ -70,4 +76,43 @@ body {
     padding: 10px 40px;
     font-family: Angel, sans-serif;
     font-size: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+    /*display: flex;*/
+    overflow: hidden;
+}
+
+.aside {
+    /*overflow: hidden;*/
+    position: absolute;
+    left: -25%;
+    bottom: 0;
+    top: 100px;
+    width: 25%;
+    transition: left 1s 1s;
+    padding: 10px;
+    box-shadow: -1.5px 1px 1px #999 inset;
+    /*border-bottom: 1px solid  #999;*/
+    /*border-right: 1px solid  #999;*/
+}
+.aside:hover,
+.aside.active {
+    left: 0;
+}
+.aside .show-button {
+    content: '';
+    position: absolute;
+    right: -24px;
+    top: 0;
+    /*
+    border-top: 3px solid  #999;*/
+    background: linear-gradient(#999 20%, #3c3c3c 20%, #3c3c3c 40%, #999 40%, #999 60%, #3c3c3c 60%, #3c3c3c 80%, #999 80% );
+    height: 20px;
+    width: 25px;
+    /*border-bottom: 3px solid  #999;*/
 }

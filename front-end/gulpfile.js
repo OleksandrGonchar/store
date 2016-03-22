@@ -49,7 +49,14 @@ gulp.task('webserver', ["servercompile"], function () {
 
 gulp.task("watch", function () {
     return gulp
-        .watch(source)
+        .watch([
+            'app/**/*.js',
+            "!app/vendor/**/*.*",
+            "app/javascripts/**/*.js",
+            "app/javascripts/**/*.html",
+            'app/**/*.css',
+            'app/**/*.css'
+        ])
         .on("change", function (event) {
             console.log("*** File " + event.path + " was " + event.type + ", running tasks...");
         });

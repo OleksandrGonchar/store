@@ -4,7 +4,8 @@
     angular.module("app", [
             "ui.router",
 
-            "video-catalog.header.directive"
+            "video-catalog.header.directive",
+            "video-catalog.aside.directive"
         ])
         .config(uiRouterConfig);
 

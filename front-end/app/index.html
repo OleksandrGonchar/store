@@ -9,9 +9,14 @@
     <script src="main-app.js"></script>
     <script src="service.js"></script>
     <script src="javascripts/header/store.header.directive.js"></script>
+    <script src="javascripts/aside/store.aside.directive.js"></script>
 </head>
 <body>
-<div header></div>
+<div class="container">
 
+    <div header></div>
+    <div aside ng-class="{ active: asideToggled }" class="aside"></div>
+
+</div>
 </body>
 </html>
