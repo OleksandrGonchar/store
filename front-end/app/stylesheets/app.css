@@ -74,7 +74,7 @@ body {
 
 .header {
     padding: 10px 40px;
-    font-family: Angel, sans-serif;
+    font-family: Angel, Arial, sans-serif;
     font-size: 80px;
 }
 
@@ -94,6 +94,7 @@ body {
     transition: left 1s .5s;
     padding: 10px;
     box-shadow: -1.5px 1px 1px #999 inset;
+    background: #3c3c3c;
 }
 .aside:hover,
 .aside.active {
