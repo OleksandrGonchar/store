@@ -2,5 +2,6 @@ extends layout
 
 block content
 
+  div(aside, ng-class="{ active: asideToggled }", class="aside")
   h1= title
   p Welcome to #{title}
