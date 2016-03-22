@@ -55,6 +55,8 @@ table {
 /* fonts part */
 @font-face {
     font-family: Angel;
+    font-style: normal;
+    font-weight: 400;
     src: url(../fonts/ANGEL___.otf);
 }
 
