@@ -5,7 +5,8 @@
             "ui.router",
 
             "video-catalog.header.directive",
-            "video-catalog.aside.directive"
+            "video-catalog.aside.directive",
+            "store.item-list.directive"
         ])
         .config(uiRouterConfig);
 
@@ -36,6 +37,29 @@
 (function () {
     "use strict";
 
+    angular.module("video-catalog.aside.directive", [])
+        .directive("aside", asideDir);
+
+    asideDir.$inject = ["$state"];
+    function asideDir() {
+        return {
+            restrict: "A",
+            templateUrl: 'javascripts/aside/store.aside.html',
+            controller: Aside
+        }
+    }
+
+    Aside.$inject = ["$state"];
+    function Aside($scope) {
+        $scope.logined = 10;
+        $scope.logout = 20;
+        $scope.user = 30;
+        console.log(50);
+    }
+})();
+(function () {
+    "use strict";
+
     angular.module("video-catalog.header.directive", [])
         .directive("header", headerDir);
 
@@ -59,14 +83,14 @@
 (function () {
     "use strict";
 
-    angular.module("video-catalog.aside.directive", [])
-        .directive("aside", asideDir);
+    angular.module("store.item-list.directive", [])
+        .directive("itemlist", asideDir);
 
     asideDir.$inject = ["$state"];
     function asideDir() {
         return {
             restrict: "A",
-            templateUrl: 'javascripts/aside/store.aside.html',
+            templateUrl: 'javascripts/components/store.item-list/store.item-list.html',
             controller: Aside
         }
     }

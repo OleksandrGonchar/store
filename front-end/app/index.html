@@ -5,18 +5,19 @@
     <title>Title</title>
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
     <script src="main-app.js"></script>
     <script src="service.js"></script>
     <script src="javascripts/header/store.header.directive.js"></script>
     <script src="javascripts/aside/store.aside.directive.js"></script>
+    <script src="javascripts/components/store.item-list/store.item-list.directive.js"></script>
 </head>
 <body>
 <div class="container">
 
     <div header></div>
     <div aside ng-class="{ active: asideToggled }" class="aside"></div>
-
+    <div itemlist></div>
 </div>
 </body>
 </html>

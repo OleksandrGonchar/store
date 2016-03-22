@@ -27,7 +27,7 @@ gulp.task('compresscss', function () {
             cascade: false
         }))
         .pipe(cssmin())
-        .pipe(gulp.dest('../public/stylesheets'))
+        .pipe(gulp.dest('../public'))
 });
 
 gulp.task('minifyHtml', function () {

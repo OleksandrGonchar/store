@@ -5,7 +5,8 @@
             "ui.router",
 
             "video-catalog.header.directive",
-            "video-catalog.aside.directive"
+            "video-catalog.aside.directive",
+            "store.item-list.directive"
         ])
         .config(uiRouterConfig);
 
