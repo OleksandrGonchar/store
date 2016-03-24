@@ -130,10 +130,11 @@ h4 {
 
 .store-item {
     flex-basis: 100%;
+    position: relative;
     padding: 10px;
 }
 
-.store-item figure {
+.store-item .store-item-image-wrapper {
     overflow: hidden;
     position: relative;
 }
@@ -154,6 +155,22 @@ h4 {
     color: red;
     font-weight: bold;
     background: yellow;
+}
+
+.store-item-description {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    transition: top linear .3s;
+}
+
+.store-item-image-wrapper:hover .store-item-description {
+    top: 0;
 }
 
 @media all and (min-width: 768px) {
