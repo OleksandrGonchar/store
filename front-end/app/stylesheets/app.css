@@ -129,7 +129,7 @@ h4 {
 }
 
 .store-item {
-    flex-basis: 50%;
+    flex-basis: 100%;
     padding: 10px;
 }
 
@@ -154,4 +154,16 @@ h4 {
     color: red;
     font-weight: bold;
     background: yellow;
+}
+
+@media all and (min-width: 768px) {
+    .store-item {
+        flex-basis: 50%;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .store-item {
+        flex-basis: 25%;
+    }
 }
