@@ -81,6 +81,14 @@ h4 {
     margin: 10px 0;
 }
 
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #999AEA;
+}
+
 .header {
     padding: 10px 40px;
     font-family: Angel, Arial, sans-serif;
@@ -92,6 +100,7 @@ h4 {
     margin: 0 auto;
     position: relative;
     min-height: 100%;
+    padding-bottom: 120px;
     overflow: hidden;
 }
 
@@ -125,6 +134,15 @@ h4 {
 
 .active .show-button {
     transform: rotateZ(360deg);
+}
+
+.footer {
+    padding: 10px;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .store-wrapper {
@@ -177,6 +195,10 @@ h4 {
 
 .store-item-image-wrapper:hover .store-item-description {
     top: 0;
+}
+
+.footer svg {
+    vertical-align: middle;
 }
 
 @media all and (max-width: 767px) {
