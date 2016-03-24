@@ -1,3 +1,10 @@
-<div>
-    <span>Item</span>
+<div class="store-wrapper">
+    <div class="store-item" ng-repeat="model in collection">
+        <figure>
+            <span class="store-item-custom-label">Sale</span>
+            <img src="http://dummyimage.com/600x400/000/fff.jpg" alt="dummy image">
+        </figure>
+        <h4>{{model.name}}</h4>
+        <p>{{model.description}}</p>
+    </div>
 </div>
