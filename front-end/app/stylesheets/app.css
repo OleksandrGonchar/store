@@ -90,8 +90,11 @@ a:hover {
     color: #fff;
 }
 
+li {
+    margin-bottom: 5px;
+}
 .header {
-    padding: 10px 40px;
+    padding: 10px;
     font-family: Angel, Arial, sans-serif;
     font-size: 80px;
 }
@@ -101,7 +104,7 @@ a:hover {
     margin: 0 auto;
     position: relative;
     min-height: 100%;
-    padding-bottom: 160px;
+    padding: 0 0 160px 20px;
     overflow: hidden;
 }
 
@@ -144,6 +147,7 @@ a:hover {
     bottom: 0;
     left: 0;
     right: 0;
+    overflow: hidden;
 }
 
 .store-wrapper {
@@ -173,7 +177,7 @@ a:hover {
     width: 50%;
     top: 20%;
     left: 0;
-    transform: skewY(-45deg)/* rotate(-45deg)*/;
+    transform: skewY(-45deg);
     padding: 5px 15% 5px 5%;
     text-align: center;
     white-space: nowrap;
@@ -200,6 +204,14 @@ a:hover {
 
 .footer svg {
     vertical-align: middle;
+}
+
+.footer:before {
+    content: '';
+    display: block;
+    box-shadow: #fff 0 1px 13px;
+    height: 1px;
+    background: #999;
 }
 
 @media all and (max-width: 767px) {

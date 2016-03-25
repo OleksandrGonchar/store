@@ -31,7 +31,7 @@
             name: "7 first item",
             href: "http://dummyimage.com/600x400/023/fff.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        },{
+        }/*,{
             name: "8 second item",
             href: "http://dummyimage.com/600x400/023/fff.jpg",
             description: " Aspernatur corporis, cum delectus deleniti, ex iure laboriosam libero, molestiae mollitia sequi suscipit temporibus!"
@@ -43,7 +43,7 @@
             name: "10 second fourth",
             href: "http://dummyimage.com/600x400/023/fff.jpg",
             description: "Doloribus illo magnam minima?"
-        }
+        }*/
     ];
 
     angular.module("store.item-list.directive", [])
