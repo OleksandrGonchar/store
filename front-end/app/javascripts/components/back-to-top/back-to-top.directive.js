@@ -27,7 +27,7 @@
 
     function asideDir() {
         function svgIcon() {
-            return '<div ng-click="gotoBottom()" class="back-to-top">'+
+            return '<div ng-click="gotoBottom()" class="back-to-top" title="Back to top">'+
                 '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" ' +
                 'width="866.929px" height="866.93px" viewBox="0 0 866.929 866.93" style="enable-background:new 0 0 866.929 866.93;"' +
                 'xml:space="preserve">' +
@@ -38,9 +38,7 @@
                 "c-5.101-46.8-81.2-40.7-81.101,5.8l-0.199,436.5c0,5.2-3.801,9.5-8.9,10.2c-0.1,0-0.1,0-0.2,0c-0.6,0.1-1.1,0.1-1.7,0.1"+
                 'c-14.699-0.399-47.8-0.899-80.1-47.6c-4.3-6.2-8.2-11.8-11.7-16.9C195.865,376.229,136.065,400.63,144.465,450.93z"/>'+
                 '<path d="M304.465,846.93c0,11,9,20,20,20h322.5c11,0,20-9,20-20v-51.101h-362.5V846.93z"/>'+
-                '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+
-                '<g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+
-                '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+ '<g>'+ '</g>'+
+                '</g>' +
                 '</svg></div>';
         }
 
