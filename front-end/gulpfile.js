@@ -24,7 +24,12 @@ gulp.task('compressjs', function () {
 
 //sass to css
 gulp.task('sass', function () {
-    return gulp.src(['app/**/*.scss', '!app/vendor/**/*.scss'])
+    return gulp.src([
+        'app/stylesheets/meyerweb.css-reset.scss',
+        'app/stylesheets/main-layout.scss',
+        'app/fonts/*.scss',
+        'app/**/*.scss',
+        '!app/vendor/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(concatCss("app.css"))
@@ -65,8 +70,7 @@ gulp.task("watch", function () {
             "!app/vendor/**/*.*",
             "app/javascripts/**/*.js",
             "app/javascripts/**/*.html",
-            'app/**/*.css',
-            'app/**/*.css'
+            "app/**/*.scss"
         ], ["servercompile"])
         .on("change", function (event) {
             console.log("*** File " + event.path + " was " + event.type + ", running tasks...");
