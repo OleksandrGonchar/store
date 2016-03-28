@@ -53,10 +53,7 @@
 
     Aside.$inject = ["$state"];
     function Aside($scope) {
-        $scope.logined = 10;
-        $scope.logout = 20;
-        $scope.user = 30;
-        console.log(50);
+        $scope.logined = 336;
     }
 })();
 (function () {
