@@ -56,7 +56,7 @@ gulp.task("watch", function () {
             "app/javascripts/**/*.html",
             'app/**/*.css',
             'app/**/*.css'
-        ])
+        ], ["servercompile"])
         .on("change", function (event) {
             console.log("*** File " + event.path + " was " + event.type + ", running tasks...");
         });
