@@ -313,3 +313,6 @@ table {
     flex-basis: 25%;
   }
 }
+.back-to-top {
+  background: red;
+}

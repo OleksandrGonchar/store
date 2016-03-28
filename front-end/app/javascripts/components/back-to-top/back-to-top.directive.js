@@ -4,31 +4,21 @@
 
     angular.module('anchorScrollExample', [])
         .controller('ScrollController', ['$scope', '$location', '$anchorScroll',
-            function ($scope, $location, $anchorScroll) {
-                function setParam(){
-                    function pageScroll() {
-                        var scrolldelay;
-                        if(countStep){
-                            window.scrollBy(0, -stepScrol);
-                            scrolldelay = setTimeout(pageScroll, stepTime);
-                            countStep--;
-                            console.log(window.pageYOffset - stepScrol);
-                        } else {
-                            clearTimeout(scrolldelay);
-                        }
-                    }
-                    var currentPosition = window.pageYOffset,
-                        targetPosition = 100,
-                        secondsCount = 2,
-                        clipCount = 60,
-                        countStep = secondsCount * clipCount,
-                        stepScrol = (currentPosition - targetPosition)/countStep,
-                        stepTime = secondsCount * 1000 / countStep;
-                    pageScroll();
+            function ($scope) {
+                function scrollTo(element, to, duration) {
+                    if (duration <= 0) return;
+                    var difference = to - element.scrollTop;
+                    var perTick = difference / duration * 10;
+
+                    setTimeout(function() {
+                        element.scrollTop = element.scrollTop + perTick;
+                        if (element.scrollTop === to) return;
+                        scrollTo(element, to, duration - 10);
+                    }, 10);
                 }
 
                 $scope.gotoBottom = function () {
-                    setParam();
+                    scrollTo(document.body, 0, 600);
                 };
             }]);
 
@@ -38,7 +28,7 @@
     function asideDir() {
         return {
             restrict: "A",
-            template: '<h1 ng-click="gotoBottom()">OPACHA!</h1>',
+            template: '<h1 class="back-to-top" ng-click="gotoBottom()">OPACHA!</h1>',
             controller: "ScrollController"
         }
     }
