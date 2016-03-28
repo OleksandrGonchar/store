@@ -6,6 +6,8 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin');
 var htmlmin = require('gulp-htmlmin');
+var sass = require('gulp-sass');
+var concatCss = require('gulp-concat-css');
 
 var source = [
     'app/**/*.js',
@@ -20,7 +22,16 @@ gulp.task('compressjs', function () {
         .pipe(gulp.dest('../public/javascripts'))
 });
 
-gulp.task('compresscss', function () {
+//sass to css
+gulp.task('sass', function () {
+    return gulp.src(['app/**/*.scss', '!app/vendor/**/*.scss'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cssmin())
+        .pipe(concatCss("app.css"))
+        .pipe(gulp.dest('app/stylesheets'));
+});
+
+gulp.task('compresscss', ["sass"], function () {
     gulp.src(["app/**/*.css", "!app/vendor/**/*.css"])
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -36,7 +47,7 @@ gulp.task('minifyHtml', function () {
         .pipe(gulp.dest('../public/javascripts'))
 });
 
-gulp.task('webserver', ["servercompile"], function () {
+gulp.task('webserver', function () {
     return gulp
         .src('app')										// root
         .pipe(plug.webserver({
