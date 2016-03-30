@@ -8,7 +8,8 @@
             "video-catalog.aside.directive",
             "store.item-list.directive",
             "video-catalog.footer.directive",
-            "store.backToTop.directive"
+            "store.backToTop.directive",
+            "store.pre-loader.directive"
         ])
         .config(uiRouterConfig);
 
@@ -98,75 +99,6 @@
         console.log(50);
     }
 })();
-(function () {
-    "use strict";
-    var collection /*= [
-        {
-            name: "1 first item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        },{
-            name: "2 second item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: " Aspernatur corporis, cum delectus deleniti, ex iure laboriosam libero, molestiae mollitia sequi suscipit temporibus!"
-        },{
-            name: "3 second third",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Harum inventore neque repellendus!"
-        },
-        {
-            name: "4 first item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        },{
-            name: "5 second item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: " Aspernatur corporis, cum delectus deleniti, ex iure laboriosam libero, molestiae mollitia sequi suscipit temporibus!"
-        },{
-            name: "6 second third",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Harum inventore neque repellendus!"
-        },
-        {
-            name: "7 first item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        }/!*,{
-            name: "8 second item",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: " Aspernatur corporis, cum delectus deleniti, ex iure laboriosam libero, molestiae mollitia sequi suscipit temporibus!"
-        },{
-            name: "9 second third",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Harum inventore neque repellendus!"
-        },{
-            name: "10 second fourth",
-            href: "http://dummyimage.com/600x400/023/fff.jpg",
-            description: "Doloribus illo magnam minima?"
-        }*!/
-    ];*/
-
-    angular.module("store.item-list.directive", [])
-        .directive("itemlist", asideDir);
-
-    function asideDir() {
-        return {
-            restrict: "A",
-            templateUrl: 'javascripts/components/store.item-list/store.item-list.html',
-            controller: Aside
-        }
-    }
-
-    Aside.$inject = ["$scope", "$http"];
-    function Aside($scope, $http) {
-        $http.get('item').success(function(data) {
-            $scope.collection = data;
-            console.log(data);
-        });
-
-        $scope.collection = collection;
-    }
-})();
 // Back to top Directive
 (function () {
     "use strict";
@@ -216,5 +148,51 @@
             template: svgIcon(),
             controller: "ScrollController"
         }
+    }
+})();
+
+(function () {
+    "use strict";
+
+    angular.module("store.pre-loader.directive", [])
+        .directive("preLoader", preLoad);
+
+    function preLoad() {
+        return {
+            restrict: "A",
+            template: "<div class=\"preload-image\"><svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"width=\"842.488px\" height=\"842.488px\" viewBox=\"0 0 842.488 842.488\" style=\"enable-background:new 0 0 842.488 842.488;\"xml:space=\"preserve\"><g><path d=\"M741.744,177.188c-28.1-35.2-61.5-65.3-99.301-89.6c-35.6-22.9-74.299-40-115-50.9c-5.4-1.5-11,1.8-12.4,7.3l-22.199,92.4c-1.301,5.2,1.9,10.5,7,12c59.5,16.5,113.199,51.9,152,100.5c20.4,25.6,36.301,54.1,47.199,84.7c11.301,31.7,17,65,17,99.1c0,78.801-30.699,152.801-86.398,208.5c-55.701,55.701-129.801,86.4-208.5,86.4c-78.801,0-152.801-30.699-208.5-86.4c-55.7-55.699-86.3-129.699-86.3-208.5c0-58.2,16.9-114.5,48.9-162.8c18.3-27.6,40.9-51.7,66.7-71.5c0,0,30.6,40.1,30.6,40.2c5.9,8.4,20,8.1,25.3-1.1c0,0,123.4-215.6,123.601-216.1c5.9-10.2-3.101-23.1-14.7-21.2c0,0-245.3,40.8-245.6,40.8c-10.4,1.7-15.8,14.7-9.8,23.3l24.9,39.6c-37.7,28.1-70.5,62.7-96.8,102.4c-44.5,67.2-68.1,145.4-68.1,226.3c0,55.301,10.8,109,32.2,159.6c20.6,48.801,50.2,92.701,87.8,130.301s81.5,67.199,130.3,87.799c50.6,21.4,104.3,32.201,159.6,32.201c55.299,0,109-10.801,159.6-32.201c48.801-20.6,92.699-50.199,130.301-87.799c37.6-37.6,67.199-81.5,87.799-130.301c21.4-50.6,32.201-104.299,32.201-159.6c0-47.2-8-93.6-23.701-137.7C792.244,252.288,770.145,212.688,741.744,177.188z\"/></g></svg></div>"
+        }
+    }
+})();
+
+(function () {
+    "use strict";
+
+    angular.module("store.item-list.directive", [])
+        .directive("itemlist", asideDir);
+
+    function asideDir() {
+        return {
+            restrict: "A",
+            templateUrl: "javascripts/components/store.item-list/store.item-list.html",
+            controller: Aside
+        }
+    }
+
+    Aside.$inject = ["$element", "$scope", "$http"];
+    function Aside( $element, $scope, $http) {
+        $element.bind('ready', function(e){
+            console.log(e)
+        });
+        console.log($element);
+        $http({
+            method: 'GET',
+            url: 'item'
+        }).then(function successCallback(response) {
+            $scope.collection = response.data;
+            $scope.alreadyLoad = "already-load";
+        }, function errorCallback(response) {
+            console.log(response);
+        });
     }
 })();

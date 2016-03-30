@@ -8,7 +8,8 @@
             "video-catalog.aside.directive",
             "store.item-list.directive",
             "video-catalog.footer.directive",
-            "store.backToTop.directive"
+            "store.backToTop.directive",
+            "store.pre-loader.directive"
         ])
         .config(uiRouterConfig);
 

@@ -7,18 +7,25 @@
     function asideDir() {
         return {
             restrict: "A",
-            templateUrl: 'javascripts/components/store.item-list/store.item-list.html',
+            templateUrl: "javascripts/components/store.item-list/store.item-list.html",
             controller: Aside
         }
     }
 
-    Aside.$inject = ["$scope", "$http"];
-    function Aside($scope, $http) {
-        $http.get('item').success(function(data) {
-            $scope.collection = data;
-            console.log(data);
+    Aside.$inject = ["$element", "$scope", "$http"];
+    function Aside( $element, $scope, $http) {
+        $element.bind('ready', function(e){
+            console.log(e)
         });
-
-        $scope.collection = collection;
+        console.log($element);
+        $http({
+            method: 'GET',
+            url: 'item'
+        }).then(function successCallback(response) {
+            $scope.collection = response.data;
+            $scope.alreadyLoad = "already-load";
+        }, function errorCallback(response) {
+            console.log(response);
+        });
     }
 })();
