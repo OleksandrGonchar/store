@@ -223,6 +223,7 @@
         if (xhr.status != 200) {
             // обработать ошибку
             alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+            console.log(xhr.response);
         } else {
             // вывести результат
             alert( xhr.responseText ); // responseText -- текст ответа.
