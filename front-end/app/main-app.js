@@ -9,30 +9,34 @@
             "store.item-list.directive",
             "video-catalog.footer.directive",
             "store.backToTop.directive",
-            "store.pre-loader.directive"
+            "store.pre-loader.directive",
+            "store.item-page.controller"
         ])
         .config(uiRouterConfig);
 
     uiRouterConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
     function uiRouterConfig($stateProvider, $urlRouterProvider) {
         /* state way */
-        $stateProvider
-            .state('login', {
-                url: '/',
-                template: '<h1>Login</h1>'
-            });
-
         /* dashboard way */
         $stateProvider
             .state('dashboard', {
                 url: '/dashboard',
-                templateUrl: 'javascripts/dashboard/video-catalog.dashboard.html',
+                templateUrl: 'javascripts/components/store.item-list/store.item-list.html',
                 ncyBreadcrumb: {
                     label: 'Dashboard'
-                }
+                },
+                controller: "itemlist"
+            })
+            .state('item', {
+                url: '/item',
+                templateUrl: 'javascripts/components/store.item.page/store.item-page.html',
+                ncyBreadcrumb: {
+                    label: 'itemPageController'
+                },
+                controller: 'itemPageController'
             });
 
         /* default wey */
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/dashboard');
     }
 })();

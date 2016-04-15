@@ -14,13 +14,15 @@
     <script src="javascripts/footer/store.footer.directive.js"></script>
     <script src="javascripts/components/back-to-top/back-to-top.directive.js"></script>
     <script src="javascripts/components/pre-loader/store.pre-loader.directive.js"></script>
+    <script src="javascripts/components/store.item.page/store.item-page.directive.js"></script>
 </head>
 <body>
 <div class="container">
     <!--<div id="top"></div>-->
     <div header></div>
     <div aside ng-class="{ active: asideToggled }" class="aside"></div>
-    <div itemlist></div>
+    <div ui-view class="container"></div>
+    <!--<div itemlist></div>-->
     <div footer></div>
     <div back-to-top></div>
 </div>

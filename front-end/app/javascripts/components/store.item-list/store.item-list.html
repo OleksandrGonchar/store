@@ -5,8 +5,7 @@
     <div class="store-item" ng-click="move" ng-repeat="model in collection">
         <div class="store-item-image-wrapper">
             <span class="store-item-custom-label">Sale</span>
-            <img class="item-image" ng-src="{{model.href}}" alt="{{model.alt}}">
-
+            <img class="item-image" ng-src="{{model.href}}" alt="{{model.alt}}" style="display:none;">
             <p class="store-item-description">{{model.description}}</p>
         </div>
         <h4>{{model.name}}</h4>
