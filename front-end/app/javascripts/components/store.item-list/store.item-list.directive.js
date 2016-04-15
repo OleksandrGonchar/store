@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("store.item-list.directive", [])
-        .controller("itemlist", asideDir);
+        .controller("itemlist", itemlist);
 
     function asideDir() {
         return {
@@ -12,8 +12,8 @@
         }
     }
 
-    Aside.$inject = ["$element", "$scope", "$http"];
-    function Aside( $element, $scope, $http) {
+    itemlist.$inject = ["$element", "$scope", "$http"];
+    function itemlist( $element, $scope, $http) {
         console.log($element);
         $http({
             method: 'GET',
