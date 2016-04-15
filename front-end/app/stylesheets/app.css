@@ -224,6 +224,11 @@ li {
     left: -25%;
   }
 }
+.header {
+  padding: 10px;
+  font-family: Angel,Arial,sans-serif;
+  font-size: 80px;
+}
 .footer {
   padding: 10px 0;
   min-height: 160px;
@@ -244,11 +249,6 @@ li {
   box-shadow: #fff 0 1px 13px;
   height: 1px;
   background: #999;
-}
-.header {
-  padding: 10px;
-  font-family: Angel,Arial,sans-serif;
-  font-size: 80px;
 }
 .back-to-top {
   position: fixed;
