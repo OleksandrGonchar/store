@@ -360,3 +360,11 @@ li {
     transform: rotate(360deg);
   }
 }
+.item-page {
+  padding: 10px;
+}
+
+.item-page h1 {
+  font-size: 40px;
+  padding: 10px 0 30px;
+}

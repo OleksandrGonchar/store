@@ -34,6 +34,15 @@
                     label: 'itemPageController'
                 },
                 controller: 'itemPageController'
+            })
+            .state('goods', {
+                url: '/goods/{:_id}' ,
+                templateUrl: 'javascripts/components/store.item.page/store.item-page.html',
+                ncyBreadcrumb: {
+                    label: 'itemPageController'
+                },
+                controller: 'itemPageController'
+
             });
 
         /* default wey */
@@ -191,6 +200,7 @@
             url: 'goods'
         }).then(function successCallback(response) {
             $scope.collection = response.data;
+            console.log(response.data);
             $scope.alreadyLoad = "already-load";
             var a = document.getElementsByClassName("item-image");
             //a.bind('load', alert(33))
@@ -204,7 +214,7 @@
     "use strict";
 
     angular.module("store.item-page.controller", [])
-        .controller("itemPageController", itemPageDir);
+        .controller("itemPageController", itemPage);
 
     function itemPageDir() {
         return {
@@ -214,8 +224,19 @@
         }
     }
 
-    itemPage.$inject = ["$element", "$scope", "$http"];
-    function itemPage($element, $scope, $http) {
+    itemPage.$inject = ["$element", "$scope", "$http", "$stateParams"];
+    function itemPage($element, $scope, $http, $stateParams) {
+
+        $http({
+            method: 'GET',
+            url: 'goods/' + $stateParams._id
+        }).then(function successCallback(response) {
+            $scope.item = response.data;
+            $scope.alreadyLoad = "already-load";
+            console.log( response.data);
+        }, function errorCallback(response) {
+            console.log(response);
+        });
         console.log($element);
     }
 })();

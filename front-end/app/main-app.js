@@ -34,6 +34,15 @@
                     label: 'itemPageController'
                 },
                 controller: 'itemPageController'
+            })
+            .state('goods', {
+                url: '/goods/{:_id}' ,
+                templateUrl: 'javascripts/components/store.item.page/store.item-page.html',
+                ncyBreadcrumb: {
+                    label: 'itemPageController'
+                },
+                controller: 'itemPageController'
+
             });
 
         /* default wey */

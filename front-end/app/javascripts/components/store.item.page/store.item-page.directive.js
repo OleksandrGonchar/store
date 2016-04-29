@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("store.item-page.controller", [])
-        .controller("itemPageController", itemPageDir);
+        .controller("itemPageController", itemPage);
 
     function itemPageDir() {
         return {
@@ -12,8 +12,19 @@
         }
     }
 
-    itemPage.$inject = ["$element", "$scope", "$http"];
-    function itemPage($element, $scope, $http) {
+    itemPage.$inject = ["$element", "$scope", "$http", "$stateParams"];
+    function itemPage($element, $scope, $http, $stateParams) {
+
+        $http({
+            method: 'GET',
+            url: 'goods/' + $stateParams._id
+        }).then(function successCallback(response) {
+            $scope.item = response.data;
+            $scope.alreadyLoad = "already-load";
+            console.log( response.data);
+        }, function errorCallback(response) {
+            console.log(response);
+        });
         console.log($element);
     }
 })();

@@ -20,6 +20,7 @@
             url: 'goods'
         }).then(function successCallback(response) {
             $scope.collection = response.data;
+            console.log(response.data);
             $scope.alreadyLoad = "already-load";
             var a = document.getElementsByClassName("item-image");
             //a.bind('load', alert(33))

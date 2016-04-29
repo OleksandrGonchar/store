@@ -93,7 +93,7 @@ var collection;
 
     /* GET users listing. */
     router.get('/:id', function (req, res, next) {
-        Goods.findOne(req.params.id, function (err, users) {
+        Goods.findOne({_id: req.params.id}, function (err, users) {
             if (err) {
                 console.log("Errror");
                 res.type('json');
@@ -101,6 +101,7 @@ var collection;
             }
             else {
                 res.type('json');
+                console.log("\n WE send ", users);
                 res.send(users);
             }
         })
