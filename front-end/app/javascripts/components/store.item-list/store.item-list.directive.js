@@ -17,7 +17,7 @@
         console.log($element);
         $http({
             method: 'GET',
-            url: 'item'
+            url: 'goods'
         }).then(function successCallback(response) {
             $scope.collection = response.data;
             $scope.alreadyLoad = "already-load";

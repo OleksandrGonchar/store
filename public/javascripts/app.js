@@ -64,6 +64,25 @@
 (function () {
     "use strict";
 
+    angular.module("video-catalog.footer.directive", [])
+        .directive("footer", footerDir);
+
+    footerDir.$inject = ["$state"];
+    function footerDir() {
+        return {
+            restrict: "A",
+            templateUrl: 'javascripts/footer/store.footer.html',
+            controller: Footer
+        }
+    }
+
+    Footer.$inject = ["$state"];
+    function Footer($scope) {
+    }
+})();
+(function () {
+    "use strict";
+
     angular.module("video-catalog.header.directive", [])
         .directive("header", headerDir);
 
@@ -82,25 +101,6 @@
         $scope.logout = 20;
         $scope.user = 30;
         console.log(50);
-    }
-})();
-(function () {
-    "use strict";
-
-    angular.module("video-catalog.footer.directive", [])
-        .directive("footer", footerDir);
-
-    footerDir.$inject = ["$state"];
-    function footerDir() {
-        return {
-            restrict: "A",
-            templateUrl: 'javascripts/footer/store.footer.html',
-            controller: Footer
-        }
-    }
-
-    Footer.$inject = ["$state"];
-    function Footer($scope) {
     }
 })();
 // Back to top Directive
@@ -188,7 +188,7 @@
         console.log($element);
         $http({
             method: 'GET',
-            url: 'item'
+            url: 'goods'
         }).then(function successCallback(response) {
             $scope.collection = response.data;
             $scope.alreadyLoad = "already-load";
@@ -217,6 +217,5 @@
     itemPage.$inject = ["$element", "$scope", "$http"];
     function itemPage($element, $scope, $http) {
         console.log($element);
-
     }
 })();

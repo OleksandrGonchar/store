@@ -15,6 +15,5 @@
     itemPage.$inject = ["$element", "$scope", "$http"];
     function itemPage($element, $scope, $http) {
         console.log($element);
-
     }
 })();

@@ -51,8 +51,8 @@ var collection = [
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     console.log('\n item here is \n' + req);
-    req.is('application/json');
-    res.send(collection);
+   /* req.is('application/json');
+    res.send(collection);*/
 });
 
 module.exports = router;
