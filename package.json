@@ -2,9 +2,7 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
-
   "feature": "mongod --dbpath __db/db",
-
   "scripts": {
     "postinstall": "bower install",
     "start": "node ./bin/www"
@@ -27,5 +25,7 @@
     "connect-mongo": "~0.4.0",
     "validator": "~2.0.0",
     "string": "~1.7.0"
+  },
+  "devDependencies": {
   }
 }
