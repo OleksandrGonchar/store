@@ -6,7 +6,10 @@ html(ng-app="app")
     link(rel='stylesheet', href='/stylesheets/app.css')
     //link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.min.css')
     style [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {display: none !important;}
-    script(src='vendor/angular/angular.min.js')
+
+    script.
+      window.angular || document.write('<script src="vendor/angular/angular.js"><\/script>')
+
     script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(src='/javascripts/app-min.js')
   body
