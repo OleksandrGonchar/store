@@ -66,7 +66,7 @@
   padding: 10px;
   background: rgba(0, 0, 0, .8);
   color: #fff;
-  transition: top linear .3s;
+  transition: top linear .3s 1s;
 }
 
 .store-item-image-wrapper:hover .store-item-description {
@@ -77,11 +77,65 @@
   .store-item {
     flex-basis: 50%;
   }
+  .store-item-overlay {
+    border: 0 solid $primary-color;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+  .store-item:hover .store-item-overlay {
+    border: 10px solid $primary-color;
+    background: $primary-color;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    box-shadow: #fff 0 1px 13px;
+    transition: top  .5s 2s,
+      bottom  .5s 2s,
+      left  .5s 2s,
+      right  .5s 2s,
+      box-shadow  .5s 2s,
+      border  .5s 2s;
+  }
+}
+
+@media all and (min-width: $small-screen) and (max-width: $medium-screen) {
+  .store-item:nth-of-type(even):hover .store-item-overlay {
+    top: -40px;
+    right: -85px;
+    bottom: -40px;
+    left: 5px;
+  }
+  .store-item:nth-of-type(odd):hover .store-item-overlay {
+    top: -40px;
+    right: 5px;
+    bottom: -40px;
+    left: -85px;
+  }
 }
 
 @media all and (min-width: $medium-screen) {
   .store-item {
     flex-basis: 25%;
+  }
+  .store-item:nth-of-type(4n + 2):hover .store-item-overlay {
+    top: -40px;
+    right: -85px;
+    bottom: -40px;
+    left: 5px;
+  }
+  .store-item:nth-of-type(4n + 1):hover .store-item-overlay {
+    top: -40px;
+    right: 5px;
+    bottom: -40px;
+    left: -85px;
+  }
+  .store-item:hover .store-item-overlay {
+    top: -40px;
+    right: -40px;
+    bottom: -40px;
+    left: -40px;
   }
 }
 @keyframes loadMove {

@@ -3,11 +3,15 @@
         <div pre-loader></div>
     </div>
     <div class="store-item" ui-sref="goods({_id: ({{'model._id'}}) })" ng-repeat="model in collection">
-        <div class="store-item-image-wrapper">
-            <span class="store-item-custom-label">Sale</span>
-            <img class="item-image" ng-src="{{model.href}}" alt="{{model.alt}}" >
-            <p class="store-item-description">{{model.description}}</p>
+        <div class="store-item-overlay">
+
+            <div class="store-item-image-wrapper">
+                <span class="store-item-custom-label">Sale</span>
+                <img class="item-image" ng-src="{{model.href}}" alt="{{model.alt}}">
+                <p class="store-item-description">{{model.description}}</p>
+            </div>
+            <h4>{{model.name}}</h4>
+
         </div>
-        <h4>{{model.name}}</h4>
     </div>
 </div>
