@@ -2,7 +2,6 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
-  "feature": "mongod --dbpath __db/db",
   "scripts": {
     "postinstall": "bower install",
     "start": "node ./bin/www"
