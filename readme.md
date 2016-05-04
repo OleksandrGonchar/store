@@ -13,5 +13,8 @@ Setup Environment
 	> npm install
 	> bower install
 
-6. run server
+6. run server database server
+    > mongod --dbpath __db/db
+
+7. run server
 	> npm start
