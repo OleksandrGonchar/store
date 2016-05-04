@@ -5,7 +5,14 @@
     </div>
 
     <h1>{{item.name}}</h1>
-    <p><img ng-src="{{item.href}}"></p>
-    <p>{{item.description}}</p>
-    <p>{{item._id}}</p>
+
+    <div class="item-page-img-wrapper"><img ng-src="{{item.href}}"></div>
+
+    <div class="item-page-text-wrapper">
+
+        <p>{{item.description}}</p>
+
+        <p>{{item._id}}</p>
+
+    </div>
 </div>

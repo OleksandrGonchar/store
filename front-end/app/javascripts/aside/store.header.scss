@@ -10,42 +10,45 @@
   padding: 10px;
   box-shadow: -1.5px 1px 1px $secondary-color inset;
   background: $primary-color;
+
+  .show-button {
+    content: '';
+    position: absolute;
+    right: -24px;
+    top: 0;
+    background: linear-gradient($secondary-color 20%, $primary-color 20%, $primary-color 40%, $secondary-color 40%, $secondary-color 60%, $primary-color 60%, $primary-color 80%, $secondary-color 80%);
+    height: 20px;
+    width: 25px;
+    transform: rotateZ(0deg);
+    transition: all 1s;
+  }
 }
 
 .aside.active {
   left: 0;
+
+  .show-button {
+    transform: rotateZ(360deg);
+  }
+
 }
 
-.aside .show-button {
-  content: '';
-  position: absolute;
-  right: -24px;
-  top: 0;
-  background: linear-gradient($secondary-color 20%, $primary-color 20%, $primary-color 40%, $secondary-color 40%, $secondary-color 60%, $primary-color 60%, $primary-color 80%, $secondary-color 80%);
-  height: 20px;
-  width: 25px;
-  transform: rotateZ(0deg);
-  transition: all 1s;
-}
-
-.active .show-button {
-  transform: rotateZ(360deg);
-}
-
-@media all and (max-width: 767px) {
-  .aside.active .show-button {
-    right: 0;
+@media all and (max-width: $small-screen) {
+  .aside.active {
+    .show-button {
+      right: 0;
+    }
   }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: $small-screen) {
   .aside {
     width: 50%;
     left: -50%;
   }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: $medium-screen) {
   .aside {
     width: 25%;
     left: -25%;

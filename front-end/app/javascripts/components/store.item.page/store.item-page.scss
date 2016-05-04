@@ -3,7 +3,37 @@
 .item-page {
   h1 {
     font-size: 40px;
-    padding: 10px 0 30px;
+    padding: 0 0 30px;
   }
-  padding: 10px
+  padding: 0 10px 30px
+}
+
+.item-page-img-wrapper {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  padding-bottom: $medium-padding;
+}
+
+@media all and (min-width: $extra-small-screen) {
+
+}
+
+@media all and (min-width: $small-screen) {
+  .item-page-img-wrapper {
+    width: 50%;
+    float: left;
+    padding-right: $medium-padding;
+  }
+}
+
+@media all and (min-width: $medium-screen) {
+  .item-page-img-wrapper {
+    width: 492px;
+  }
+}
+
+@media all and (min-width: $large-screen) {
+
 }

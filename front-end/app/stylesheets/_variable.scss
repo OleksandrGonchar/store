@@ -3,5 +3,27 @@
   for using in files your must include with
     @import './app/stylesheets/_variable';
 */
+
+/*
+  color options
+*/
 $primary-color: #3c3c3c;
 $secondary-color: #999;
+
+/*
+  padding
+*/
+$medium-padding: 15px;
+
+/*
+  screen size
+*/
+$extra-small-screen: 320px;
+$small-screen: 768px;
+$medium-screen: 1024px;
+$large-screen: 1368px;
+
+/*
+  font options
+*/
+

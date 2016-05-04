@@ -62,6 +62,7 @@
   right: 0;
   top: 100%;
   bottom: 0;
+  margin: 0;
   padding: 10px;
   background: rgba(0, 0, 0, .8);
   color: #fff;
@@ -72,13 +73,13 @@
   top: 0;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: $small-screen) {
   .store-item {
     flex-basis: 50%;
   }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: $medium-screen) {
   .store-item {
     flex-basis: 25%;
   }
