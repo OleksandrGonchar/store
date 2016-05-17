@@ -6,8 +6,7 @@ deploy:
   on: heroku
   api_key:
     secure: ji+Nz5cxSrL59hkzzCERLQ4u62yp7IQ4+JKhEsEgDPTFXQMTqhZ/XBxKcLeEnbyyyKWP2aWv0ZrxT7v/1UkjCLStptQyJjsOdy95S90ikQWYN9jjsFL4N1W4LzNZBCq3+H78W0SOJOIzhxfxOOxIgdEAcP0Je+VNu+6U+wPru1hL1opLNl7ytlNCZJrxaQxoG4Me1FfFDXl7azVOXcl3vuhmI2jIkHqdKRxcpxTd5FrFetKlgAmIFOgFfEn2wFs1GCYBRAoQ8pBwmj885CjofgRy3da1VpQoGCowKNKf8Nq0T29bglkR05DMUQKGBbAnFfDYfGhd64y36DVQ/wRDr6xCRrXt9+pCTK3qeh6oJRcVyVvJPrDA8iqvrTSqhOPptDiHHO+Q5ea3ZGdY6N6Ii7Hb1sdqsA6eK7oEq/n/TmFqIBTsBUgLM/HpMXajoW6SjOGIin9qKG27I4y0PMj7UQCKzdRBZpsqeOs3jmFBRniluakrcbgSaqx6dCFStDvbI4IKiszPEnsi6l19q7Mpj6an9WLyKp69HXINxImb8vJuKKiqNJU53lqOIYTZvqwnUnGc2zPP5s5a9XJ/pdtgeJFCNDNKvFafDy1GACfJeDGc+Dzs0se/k+xMaeaBckkyXZjOKfM/OyAma61svZx7QFrOVO/QQDk7No8fSn7hupA=
-services:
-  - mongodb
 install:
+  - npm install
   - npm install -g bower
   - bower install
