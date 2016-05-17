@@ -9,4 +9,3 @@ deploy:
 install:
   - npm install -g bower
   - bower install
-  - mongod --dbpath __db/db
