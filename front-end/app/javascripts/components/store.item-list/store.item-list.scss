@@ -148,3 +148,10 @@
     transform: rotate(360deg);
   }
 }
+
+.show-more {
+  flex-basis: 100% !important;
+  padding: $medium-padding;
+  text-align: center;
+  font-size: 2em;
+}

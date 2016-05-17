@@ -2,7 +2,7 @@
     <div class="load-proces {{alreadyLoad}}">
         <div pre-loader></div>
     </div>
-    <div class="store-item" ui-sref="goods({_id: ({{'model._id'}}) })" ng-repeat="model in collection">
+    <div class="store-item" ui-sref="goods({_id: ({{'model._id'}}) })" ng-repeat="model in collection track by $index">
         <div class="store-item-overlay">
 
             <div class="store-item-image-wrapper">
@@ -13,5 +13,8 @@
             <h4>{{model.name}}</h4>
 
         </div>
+    </div>
+    <div class="show-more" ng-click="showMore()">
+        Show more
     </div>
 </div>
