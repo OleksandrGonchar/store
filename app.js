@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var admin = require('./routes/admin');
 var goods = require('./routes/goods.database.way');
 var item = require('./routes/item.collection');
+var example = require('./routes/example');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/', routes);
 app.use('/goods', goods);
 app.use('/item', item);
 app.use('/admin', admin);
+app.use('/example', example);
 app.use('/admin/login', function (req, res, next) {
     console.log(req);
     res.send('logined');
