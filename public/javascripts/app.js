@@ -10,7 +10,8 @@
             "video-catalog.footer.directive",
             "store.backToTop.directive",
             "store.pre-loader.directive",
-            "store.item-page.controller"
+            "store.item-page.controller",
+            "store.admin.directive"
         ])
         .config(uiRouterConfig);
 
@@ -167,6 +168,42 @@
 (function () {
     "use strict";
 
+    angular.module("store.admin.directive", [])
+        .directive("adminLogin", adminDirective);
+
+    adminDirective.$inject = ["$state"];
+    function adminDirective() {
+        return {
+            restrict: "A",
+            templateUrl: 'javascripts/admin/login/admin.login.html',
+            controller: adminLogin
+        }
+    }
+
+    adminLogin.$inject = ["$scope", "$http"];
+    function adminLogin($scope, $http) {
+        $scope.login = function(){
+            $http({
+                method: 'POST',
+                url: 'admin/login/',
+                body: {
+                    name: $scope.name,
+                    pass: $scope.pass
+                }
+            }).then(function successCallback(response) {
+                console.log( response.data);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+            console.log($scope.name);
+            console.log($scope.pass);
+        }
+    }
+})();
+
+(function () {
+    "use strict";
+
     angular.module("store.pre-loader.directive", [])
         .directive("preLoader", preLoad);
 
@@ -178,6 +215,33 @@
     }
 })();
 
+(function () {
+    "use strict";
+
+    angular.module("store.item-list.directive", [])
+        .controller("itemlist", itemlist);
+
+    itemlist.$inject = ["$element", "$scope", "$http"];
+    function itemlist( $element, $scope, $http) {
+        console.log($element);
+        $http({
+            method: 'GET',
+            url: 'goods'
+        }).then(function successCallback(response) {
+            $scope.fullCollection = response.data;
+            $scope.collection = $scope.fullCollection;
+            console.log(response.data, " \n", $scope.fullCollection);
+            $scope.alreadyLoad = "already-load";
+
+            $scope.showMore = function(fullCollection) {
+
+            };
+
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    }
+})();
 (function () {
     "use strict";
 
@@ -202,34 +266,6 @@
             $scope.item = response.data;
             $scope.alreadyLoad = "already-load";
             console.log( response.data);
-        }, function errorCallback(response) {
-            console.log(response);
-        });
-        console.log($element);
-    }
-})();
-(function () {
-    "use strict";
-
-    angular.module("store.item-list.directive", [])
-        .controller("itemlist", itemlist);
-
-    itemlist.$inject = ["$element", "$scope", "$http"];
-    function itemlist( $element, $scope, $http) {
-        console.log($element);
-        $http({
-            method: 'GET',
-            url: 'goods'
-        }).then(function successCallback(response) {
-            $scope.fullCollection = response.data;
-            $scope.collection = $scope.fullCollection;
-            console.log(response.data, " \n", $scope.fullCollection);
-            $scope.alreadyLoad = "already-load";
-
-            $scope.showMore = function(fullCollection) {
-
-            };
-
         }, function errorCallback(response) {
             console.log(response);
         });

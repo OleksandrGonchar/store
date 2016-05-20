@@ -10,7 +10,8 @@
             "video-catalog.footer.directive",
             "store.backToTop.directive",
             "store.pre-loader.directive",
-            "store.item-page.controller"
+            "store.item-page.controller",
+            "store.admin.directive"
         ])
         .config(uiRouterConfig);
 

@@ -6,9 +6,14 @@ body {
 }
 
 body {
-  background: $primary-color;
+  background: lightgrey;
   color: $secondary-color;
   font-family: Arial, sans-serif;
+}
+
+.container {
+  background: $primary-color;
+  box-shadow: 0 5px 50px #222;
 }
 
 h4 {
